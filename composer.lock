@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4168f31ebbde687d2a5716c96a618b9a",
+    "content-hash": "2d9892547167007255e7bcfaece1ae5b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2189,16 +2189,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.61.0",
+            "version": "2.62.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bdf4f4fe3a3eac4de84dbec0738082a862c68ba6"
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bdf4f4fe3a3eac4de84dbec0738082a862c68ba6",
-                "reference": "bdf4f4fe3a3eac4de84dbec0738082a862c68ba6",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2293,7 +2293,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-06T12:41:24+00:00"
+            "time": "2022-09-02T07:48:13+00:00"
         },
         {
             "name": "nette/schema",
@@ -2456,16 +2456,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.14.0",
+            "version": "v4.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1"
+                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/34bea19b6e03d8153165d8f30bba4c3be86184c1",
-                "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
+                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2512,9 +2512,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
             },
-            "time": "2022-05-31T20:59:12+00:00"
+            "time": "2022-09-04T07:30:47+00:00"
         },
         {
             "name": "opis/closure",
@@ -8742,12 +8742,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "1a85ce43937631895a6116907e2eb25d3b8c0297"
+                "reference": "a0f3e755c775fdc960cd5552e046a860c82dd9f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/1a85ce43937631895a6116907e2eb25d3b8c0297",
-                "reference": "1a85ce43937631895a6116907e2eb25d3b8c0297",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/a0f3e755c775fdc960cd5552e046a860c82dd9f9",
+                "reference": "a0f3e755c775fdc960cd5552e046a860c82dd9f9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -8796,7 +8796,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-29T06:35:27+00:00"
+            "time": "2022-09-04T06:24:39+00:00"
         },
         {
             "name": "sebastian/version",
@@ -8920,7 +8920,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "ext-pdo": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

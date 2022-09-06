@@ -31,14 +31,11 @@ if(!function_exists('toAction')){
 |
 */
 //不需要登录授权的
-Route::group(['middleware' => ['organization.auth']], function () {
-    Route::post('/user/auth/login',toAction(\App\Http\Controllers\User\AuthController::class,'login'));
+Route::post('/user/auth/login',toAction(\App\Http\Controllers\User\AuthController::class,'login'));
 
-    //需要登录授权的
-    Route::group(['middleware' => ['jwt.auth',]], function () {
-        //
-        Route::get('/user/auth/info',toAction(\App\Http\Controllers\User\AuthController::class,'info'));
-    });
+//需要登录授权的
+Route::group(['middleware' => ['jwt.auth',]], function () {
+    //
+    Route::get('/user/auth/info',toAction(\App\Http\Controllers\User\AuthController::class,'info'));
 });
-
 

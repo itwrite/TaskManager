@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ModelTimeFormatTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,7 +19,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  */
 class User extends Authenticatable implements Transformable,JWTSubject
 {
-    use TransformableTrait, HasApiTokens, HasFactory, Notifiable;
+    use TransformableTrait, HasApiTokens, HasFactory, Notifiable,ModelTimeFormatTrait;
 
     protected $jWTCustomClaims = [];
 
@@ -52,16 +53,32 @@ class User extends Authenticatable implements Transformable,JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * @return mixed
+     * @author zzp
+     * @date 2022/9/5
+     */
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
+    /**
+     * @return array
+     * @author zzp
+     * @date 2022/9/5
+     */
     public function getJWTCustomClaims()
     {
         return $this->jWTCustomClaims??[];
     }
 
+    /**
+     * @param array $jWTCustomClaims
+     * @return $this
+     * @author zzp
+     * @date 2022/9/5
+     */
     public function setJWTCustomClaims(array $jWTCustomClaims){
         $this->jWTCustomClaims = array_merge($this->jWTCustomClaims??[],$jWTCustomClaims);
         return $this;

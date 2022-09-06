@@ -8,25 +8,24 @@ if(!function_exists('page_size')){
     }
 }
 
-if(!function_exists('distance')){
+if(!function_exists('setting')){
+
     /**
-     * -------------------------------------------
-     * -------------------------------------------
-     * @param $point1 [longitude,latitude]
-     * @param $point2 [longitude,latitude]
-     * @return array
-     * itwri 2022/6/12 14:21
+     * @param $key
+     * @param $value
+     * @return \Illuminate\Database\Eloquent\Collection
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @author zzp
+     * @date 2022/9/5
      */
-    function distance($point1, $point2,$type='meters') {
-        list($lon1,$lat1,) = $point1;
-        list($lon2,$lat2,) = $point2;
-        $dist = rad2deg(acos(sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($lon1 - $lon2))));
-        $miles = $dist * 60 * 1.1515;
-        $feet = $miles * 5280;
-        $yards = $feet / 3;
-        $kilometers = $miles * 1.609344;
-        $meters = $kilometers * 1000;
-        $arr = compact('miles','feet','yards','kilometers','meters','dist');
-        return Arr::get($arr,$type,'meters');
+    function setting($key,$value=null){
+        /**
+         * @var \App\Services\SettingService
+         */
+        $service = app()->make(\App\Services\SettingService::class);
+        if(func_num_args()==1){
+            return $service->get($key);
+        }
+        return $service->set($key,$value);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ModelTimeFormatTrait;
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
@@ -13,7 +14,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  */
 class Setting extends Model implements Transformable
 {
-    use TransformableTrait;
+    use TransformableTrait,ModelTimeFormatTrait;
 
     /**
      * The attributes that are mass assignable.

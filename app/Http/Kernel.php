@@ -69,7 +69,6 @@ class Kernel extends HttpKernel
 
         //
         'jwt.auth' => JWTAuth::class,
-        'jwt.refresh' => RefreshToken::class,
-        'organization.auth'=>OrganizationMatch::class
+        'jwt.refresh' => RefreshToken::class
     ];
 }

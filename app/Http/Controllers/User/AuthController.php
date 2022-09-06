@@ -10,8 +10,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\JWTAuth;
 
 class AuthController extends Controller
