@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Users;
 
 use App\Enums\ClientTypeEnum;
 use App\Exceptions\ApiException;
@@ -37,7 +37,6 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
-        $_code = $request->post('_code');
 
         /**
          * @var User
@@ -50,7 +49,7 @@ class AuthController extends Controller
         if(!password_verify($credentials['password'],$user->password)){
             throw new ApiException(AuthError::PASSWORD_WRONG());
         }
-        $user->setJWTCustomClaims(['client'=>ClientTypeEnum::USER,'organization_code'=>$request->header('Organization-Code')]);
+        $user->setJWTCustomClaims(['client'=>ClientTypeEnum::USER]);
         $this->auth->factory()->setTTL(30);
         $user->remember_token = $token = $this->auth->fromSubject($user);
 
