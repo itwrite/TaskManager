@@ -43,16 +43,21 @@ class AuthController extends Controller
          */
         $user = $this->repository->findWhere(['username'=>$credentials['username']??''])->first();
         if(empty($user)){
+            //用户不存在
             throw new ApiException(AuthError::USER_NOT_EXISTS());
         }
 
         if(!password_verify($credentials['password'],$user->password)){
+            //密码错误
             throw new ApiException(AuthError::PASSWORD_WRONG());
         }
+
+        //生成token
         $user->setJWTCustomClaims(['client'=>ClientTypeEnum::USER]);
         $this->auth->factory()->setTTL(30);
         $user->remember_token = $token = $this->auth->fromSubject($user);
 
+        //保存token
         $user->save();
 
         return $this->success([
