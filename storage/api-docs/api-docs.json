@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/area/list": {
+            "get": {
+                "operationId": "674c5183412d7b8f3335f48e8026aecd",
+                "responses": {
+                    "200": {
+                        "description": "Display a listing of areas."
+                    }
+                }
+            }
+        }
+    }
+}

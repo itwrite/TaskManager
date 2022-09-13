@@ -51,6 +51,12 @@ class AreaController extends Controller
     }
 
     /**
+     *
+     * @OA\Get(
+     *     path="/area/list",
+     *     @OA\Response(response="200", description="Display a listing of areas.")
+     * )
+     *
      * @return JsonResponse
      * @throws ApiException
      * @author zzp
