@@ -3,7 +3,7 @@
 namespace App\Enums;
 
 
-class StatusEnum extends Enum
+class StatusEnum extends BaseEnum
 {
     const ENABLE = 1; //有效
     const DISABLE = 0;//无效

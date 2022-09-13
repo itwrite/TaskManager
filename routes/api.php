@@ -33,8 +33,14 @@ if(!function_exists('toAction')){
 //不需要登录授权的
 Route::post('/user/auth/login',toAction(\App\Http\Controllers\Users\AuthController::class,'login'));
 
+//城市地区列表
+Route::get('/area/list',toAction(\App\Http\Controllers\Common\AreaController::class,'lists'));
+Route::get('/area/detail',toAction(\App\Http\Controllers\Common\AreaController::class,'detail'));
+
 //需要登录授权的
 Route::group(['middleware' => ['jwt.auth',]], function () {
+    //上传文件
+    Route::post('/file/upload',toAction(\App\Http\Controllers\Common\FileController::class,'uploadOne'));
     //
     Route::get('/user/auth/info',toAction(\App\Http\Controllers\Users\AuthController::class,'info'));
 });

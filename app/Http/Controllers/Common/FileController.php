@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Common;
+namespace App\Http\Controllers\Common;
 
 use App\Exceptions\ApiException;
 use App\Http\Controllers\Controller;
